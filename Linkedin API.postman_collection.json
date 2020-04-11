@@ -1,0 +1,113 @@
+{
+	"info": {
+		"_postman_id": "498b2c7d-5bbf-422c-a650-5a0be7831341",
+		"name": "Linkedin API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authorization",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=[insert]&redirect_uri=[insert]&state=[insert]&scope=r_liteprofile%20r_emailaddress%20w_member_social",
+					"protocol": "https",
+					"host": [
+						"www",
+						"linkedin",
+						"com"
+					],
+					"path": [
+						"oauth",
+						"v2",
+						"authorization"
+					],
+					"query": [
+						{
+							"key": "response_type",
+							"value": "code"
+						},
+						{
+							"key": "client_id",
+							"value": "[insert]"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "[insert]"
+						},
+						{
+							"key": "state",
+							"value": "[insert]"
+						},
+						{
+							"key": "scope",
+							"value": "r_liteprofile%20r_emailaddress%20w_member_social"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Access Token",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"connection": true,
+					"content-length": true,
+					"accept-encoding": true,
+					"accept": true,
+					"user-agent": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://www.linkedin.com/oauth/v2/accessToken?grant_type=authorization_code&code=[insert]&redirect_uri=[insert]&client_id=[insert]&client_secret=[insert]",
+					"protocol": "https",
+					"host": [
+						"www",
+						"linkedin",
+						"com"
+					],
+					"path": [
+						"oauth",
+						"v2",
+						"accessToken"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "authorization_code"
+						},
+						{
+							"key": "code",
+							"value": "[insert]"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "[insert]"
+						},
+						{
+							"key": "client_id",
+							"value": "[insert]"
+						},
+						{
+							"key": "client_secret",
+							"value": "[insert]"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
