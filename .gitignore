@@ -1,4 +1,4 @@
 lib
 .env
 *.zip
-pyvenv.cfg
+*.cfg
